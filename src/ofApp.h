@@ -4,6 +4,7 @@
 #include "ofxDeckLink.h"
 
 #define IMAGE_NUM 5
+#define REALTIME 0
 
 class ofApp : public ofBaseApp{
 
@@ -31,7 +32,7 @@ class ofApp : public ofBaseApp{
         int camWidth;
         int camHeight;
         int margin_left = 10;
-        int margin_bottom = 30;
+        int margin_bottom = 60;
     
     
         const float INTERVAL_MAX = 10.0f;
@@ -40,7 +41,7 @@ class ofApp : public ofBaseApp{
     
         float stillCutInterval = 5.0f;
         bool stillCutMode = false;
-        string stillCutMode_str = "";
+        string mode_str = "";
         float curTimef = 0.0f;
         float prevTimef = 0.0f;
         float timeDiff = 0.0f;
@@ -48,9 +49,9 @@ class ofApp : public ofBaseApp{
     
         const int IMAGE_IDX_MAX = IMAGE_NUM - 1;
         ofImage infoDrawing[IMAGE_NUM];
-        bool imageMode = false;
+        bool imageMode = true;
         string imageMode_str = "";
-        int curImageIdx = -1;
+        int curImageIdx = 0; //first image index
     
 		
 };

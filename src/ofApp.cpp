@@ -95,8 +95,8 @@ void ofApp::draw(){
     
     
     ofSetHexColor(0xffffff);
-    ofDrawBitmapString(stillCutMode_str, margin_left, ofGetHeight() - margin_bottom);
-    ofDrawBitmapString(ofToString(roundf(timeDiff*100)/100) + " / " + ofToString(stillCutInterval) + " curImgIdx: " + ofToString(curImageIdx), margin_left + 250, ofGetHeight() - margin_bottom);
+    ofDrawBitmapStringHighlight(mode_str, margin_left, ofGetHeight() - margin_bottom);
+    ofDrawBitmapStringHighlight(ofToString(roundf(timeDiff*100)/100) + " / " + ofToString(stillCutInterval), margin_left + 250, ofGetHeight() - margin_bottom);
 //    ofDrawBitmapString(ofToString(stillCutInterval), margin_left + 500, ofGetHeight() - margin_bottom);
     
     
@@ -110,30 +110,44 @@ void ofApp::keyPressed(int key){
     
     if (key == 'f') {
         ofToggleFullscreen();
+        ofHideCursor();
     }
     if (key == '1') {
         input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_PROGRESSIVE);
+        stillCutMode = false; imageMode = true; curImageIdx = 0;
+        mode_str = "imageMode";
     }
     if (key == '2') {
         input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_UPPERFIELD);
+        stillCutMode = false; imageMode = true; curImageIdx = 1;
+        mode_str = "imageMode";
     }
     if (key == '3') {
         input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_LOWERFIELD);
+        stillCutMode = false; imageMode = true; curImageIdx = 2;
+        mode_str = "imageMode";
     }
     if (key == '4') {
         input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_AUTOFIELD);
+        stillCutMode = false; imageMode = true; curImageIdx = 3;
+        mode_str = "imageMode";
+    }
+    if (key == '5') {
+        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_AUTOFIELD);
+        stillCutMode = false; imageMode = true; curImageIdx = 4;
+        mode_str = "imageMode";
     }
     
     // STILL CUT MODE
     if(key == 's' || key == 'S'){
         imageMode = false;
         stillCutMode = true;
-    if (stillCutMode) {
-        stillCutMode_str = "stillCutMode : true";
-    } else {
-        stillCutMode_str = "stillCutMode : false";
-    }
-        ofLog(OF_LOG_NOTICE, stillCutMode_str);
+//    if (stillCutMode) {
+        mode_str = "stillCutMode";
+//    } else {
+//        mode_str = "stillCutMode : false";
+//    }
+        ofLog(OF_LOG_NOTICE, mode_str);
     }
     
     
@@ -147,30 +161,31 @@ void ofApp::keyPressed(int key){
     
     
     // IMAGE MODE
-    if (key == 'i' || key == 'I') {
-        if (!imageMode) {
-            stillCutMode = false;
-            imageMode = true;
-        
-            if (curImageIdx < IMAGE_IDX_MAX){
-                curImageIdx++;
-            }
-            
-            if (imageMode) {
-                imageMode_str = "imageMode : true";
-            } else {
-                imageMode_str = "imageMode : false";
-            }
-            
-            ofLog(OF_LOG_NOTICE, imageMode_str);
-        }
-    }
-
+//    if (key == 'i' || key == 'I') {
+//        if (!imageMode) {
+//            stillCutMode = false;
+//            imageMode = true;
+//        
+//            if (curImageIdx < IMAGE_IDX_MAX){
+//                curImageIdx++;
+//            }
+//            
+//            if (imageMode) {
+//                imageMode_str = "imageMode : true";
+//            } else {
+//                imageMode_str = "imageMode : false";
+//            }
+//            
+//            ofLog(OF_LOG_NOTICE, imageMode_str);
+//        }
+//    }
+//
 
     // VIDEO MODE
     if (key == 'v' || key == 'V'){
         imageMode = false;
         stillCutMode = false;
+        mode_str = "videoMode";
     }
  
 
