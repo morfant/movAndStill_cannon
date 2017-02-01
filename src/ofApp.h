@@ -31,7 +31,7 @@ class ofApp : public ofBaseApp{
         ofVideoGrabber vidGrabber;
         int camWidth;
         int camHeight;
-        int margin_left = 10;
+        int margin_left = 180;
         int margin_bottom = 60;
     
     
@@ -39,7 +39,7 @@ class ofApp : public ofBaseApp{
         const float INTERVAL_MIN = 0.0f;
         const float INTERVAL_STEP = 0.1f;
     
-        float stillCutInterval = 5.0f;
+        float stillCutInterval = 3.0f;
         bool stillCutMode = false;
         string mode_str = "";
         float curTimef = 0.0f;

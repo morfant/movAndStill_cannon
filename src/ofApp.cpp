@@ -113,27 +113,27 @@ void ofApp::keyPressed(int key){
         ofHideCursor();
     }
     if (key == '1') {
-        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_PROGRESSIVE);
+//        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_PROGRESSIVE);
         stillCutMode = false; imageMode = true; curImageIdx = 0;
         mode_str = "imageMode";
     }
     if (key == '2') {
-        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_UPPERFIELD);
+//        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_UPPERFIELD);
         stillCutMode = false; imageMode = true; curImageIdx = 1;
         mode_str = "imageMode";
     }
     if (key == '3') {
-        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_LOWERFIELD);
+//        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_LOWERFIELD);
         stillCutMode = false; imageMode = true; curImageIdx = 2;
         mode_str = "imageMode";
     }
     if (key == '4') {
-        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_AUTOFIELD);
+//        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_AUTOFIELD);
         stillCutMode = false; imageMode = true; curImageIdx = 3;
         mode_str = "imageMode";
     }
     if (key == '5') {
-        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_AUTOFIELD);
+//        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_AUTOFIELD);
         stillCutMode = false; imageMode = true; curImageIdx = 4;
         mode_str = "imageMode";
     }
