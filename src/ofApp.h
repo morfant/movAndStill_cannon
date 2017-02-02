@@ -53,5 +53,8 @@ class ofApp : public ofBaseApp{
         string imageMode_str = "";
         int curImageIdx = 0; //first image index
     
+        bool blackOut = false;
+        bool whiteOut = false;
+    
 		
 };
