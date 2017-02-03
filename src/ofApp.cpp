@@ -9,6 +9,7 @@ void ofApp::setup(){
     infoDrawing[2].load("images/infoDrawing_2.jpeg");
     infoDrawing[3].load("images/infoDrawing_3.jpeg");
     infoDrawing[4].load("images/infoDrawing_4.jpeg");
+    infoDrawing[5].load("images/infoDrawing_5.jpeg");
     
     
     ofSetVerticalSync(true);
@@ -155,6 +156,14 @@ void ofApp::keyPressed(int key){
         stillCutMode = false; imageMode = true; curImageIdx = 4;
         mode_str = "imageMode";
     }
+    if (key == '6') {
+//        input.setDrawMode(ofxDeckLinkAPI::Input::DRAWMODE_AUTOFIELD);
+        blackOut = false;
+        whiteOut = false;
+        stillCutMode = false; imageMode = true; curImageIdx = 5;
+        mode_str = "imageMode";
+    }
+ 
     
     // STILL CUT MODE
     if(key == 's' || key == 'S'){
@@ -213,11 +222,15 @@ void ofApp::keyPressed(int key){
     if (key == 'b') {
         blackOut = true;
         whiteOut = false;
+        imageMode = false;
+        stillCutMode  = false;
     }
     
     if (key == 'w') {
         whiteOut = true;
         blackOut = false;
+        imageMode = false;
+        stillCutMode  = false;
     }
  
  

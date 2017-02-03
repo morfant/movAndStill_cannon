@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "ofxDeckLink.h"
 
-#define IMAGE_NUM 5
+#define IMAGE_NUM 6
 #define REALTIME 0
 
 class ofApp : public ofBaseApp{
